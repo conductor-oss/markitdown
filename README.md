@@ -11,7 +11,7 @@ A pure-Go library and CLI that converts documents to Markdown. Go port of the Py
 - Pure Go, no CGO, no external runtime dependencies
 - 12 format converters: PDF, DOCX, PPTX, XLSX, XLS, HTML, RSS/Atom, CSV, EPUB, Jupyter, plain text, ZIP
 - Deterministic output with golden test suite
-- Optional PDFium PDF backend via WebAssembly (no CGO)
+- PDF extraction via PDFium (WebAssembly, no CGO) with heading/bold/italic detection
 
 ## Supported formats
 
@@ -127,18 +127,6 @@ Flags:
   -v, --version             Show version
       --keep-data-uris      Keep full base64-encoded data URIs in output
 ```
-
-## PDF backend
-
-PDF extraction uses [PDFium](https://pdfium.googlesource.com/pdfium/) via [go-pdfium](https://github.com/klippa-app/go-pdfium) running in a [Wazero](https://github.com/tetratelabs/wazero) WebAssembly sandbox. This is the default -- no build tags or external dependencies needed. It produces high-quality text with proper word boundaries and spacing.
-
-For a lighter-weight build (~8 MB smaller binary), you can opt into the [ledongthuc/pdf](https://github.com/ledongthuc/pdf) backend instead:
-
-```bash
-go build -tags nopdfium ./...
-```
-
-Note: the `nopdfium` backend has limited word boundary detection and may produce text without spaces.
 
 ## Notes
 - PDF extraction is text-based; image-only PDFs produce no output without OCR.

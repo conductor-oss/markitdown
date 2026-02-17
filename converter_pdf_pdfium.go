@@ -1,5 +1,3 @@
-//go:build !nopdfium
-
 package markitdown
 
 import (
