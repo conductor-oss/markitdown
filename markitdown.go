@@ -154,7 +154,7 @@ func (m *MarkItDown) ConvertURL(url string) (*DocumentConverterResult, error) {
 	// Detect MIME if not provided
 	if info.MIMEType == "" {
 		info.MIMEType = detectMIMEType(reader, info.Extension)
-		reader.Seek(0, io.SeekStart)
+		_, _ = reader.Seek(0, io.SeekStart)
 	}
 
 	return m.ConvertReader(reader, info)

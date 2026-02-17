@@ -79,9 +79,11 @@ func (c *PdfConverter) Convert(reader io.ReadSeeker, info StreamInfo) (*Document
 	if err != nil {
 		return nil, fmt.Errorf("open PDF: %w", err)
 	}
-	defer instance.FPDF_CloseDocument(&requests.FPDF_CloseDocument{
-		Document: doc.Document,
-	})
+	defer func() {
+		_, _ = instance.FPDF_CloseDocument(&requests.FPDF_CloseDocument{
+			Document: doc.Document,
+		})
+	}()
 
 	pageCountResp, err := instance.FPDF_GetPageCount(&requests.FPDF_GetPageCount{
 		Document: doc.Document,

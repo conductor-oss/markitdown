@@ -94,16 +94,9 @@ type styleInfo struct {
 	styleID string
 }
 
-// numberingLevel holds numbering level info.
-type numberingLevel struct {
-	numFmt string
-	start  int
-}
-
 // numberingDef holds a numbering definition.
 type numberingDef struct {
 	abstractNumID string
-	levels        map[int]numberingLevel
 }
 
 func (c *DocxConverter) parseStyles(zr *zip.Reader) map[string]styleInfo {
@@ -424,7 +417,7 @@ func (c *DocxConverter) documentToHTML(docData []byte, rels map[string]ooxml.Rel
 				for _, attr := range t.Attr {
 					if attr.Name.Local == "val" {
 						level := 0
-						fmt.Sscanf(attr.Value, "%d", &level)
+						_, _ = fmt.Sscanf(attr.Value, "%d", &level)
 						s.listLevel = level
 					}
 				}

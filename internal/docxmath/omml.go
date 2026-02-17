@@ -85,17 +85,6 @@ func (e *OMMLElement) findChild(name string) *OMMLElement {
 	return nil
 }
 
-// findAllChildren finds all children with the given local name.
-func (e *OMMLElement) findAllChildren(name string) []*OMMLElement {
-	var result []*OMMLElement
-	for i := range e.Children {
-		if e.Children[i].localName() == name {
-			result = append(result, &e.Children[i])
-		}
-	}
-	return result
-}
-
 // getAttrVal gets the value of an attribute by local name.
 func (e *OMMLElement) getAttrVal() string {
 	for _, attr := range e.Attrs {
@@ -104,15 +93,6 @@ func (e *OMMLElement) getAttrVal() string {
 		}
 	}
 	return ""
-}
-
-// findText finds text content in a specific child path.
-func (e *OMMLElement) findText(name string) string {
-	child := e.findChild(name)
-	if child == nil {
-		return ""
-	}
-	return child.Content
 }
 
 // prResult holds properties parsed from a Pr element.

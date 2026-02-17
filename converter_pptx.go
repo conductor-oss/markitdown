@@ -418,12 +418,12 @@ func (c *PptxConverter) extractPosition(node *xmlNode, shape *pptxShape) {
 	}
 	if x := off.getAttr("x"); x != "" {
 		var v int64
-		fmt.Sscanf(x, "%d", &v)
+		_, _ = fmt.Sscanf(x, "%d", &v)
 		shape.left = v
 	}
 	if y := off.getAttr("y"); y != "" {
 		var v int64
-		fmt.Sscanf(y, "%d", &v)
+		_, _ = fmt.Sscanf(y, "%d", &v)
 		shape.top = v
 	}
 }

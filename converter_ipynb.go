@@ -27,10 +27,7 @@ func NewIpynbConverter() *IpynbConverter {
 }
 
 func (c *IpynbConverter) Accepts(info StreamInfo) bool {
-	if info.Extension == ".ipynb" {
-		return true
-	}
-	return false
+	return info.Extension == ".ipynb"
 }
 
 // notebook represents the JSON structure of a Jupyter notebook.

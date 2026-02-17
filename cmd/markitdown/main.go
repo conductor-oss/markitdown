@@ -119,7 +119,10 @@ func main() {
 	if output != "" {
 		dir := filepath.Dir(output)
 		if dir != "." {
-			os.MkdirAll(dir, 0o755)
+			if err := os.MkdirAll(dir, 0o755); err != nil {
+				fmt.Fprintf(os.Stderr, "Error creating directory: %v\n", err)
+				os.Exit(1)
+			}
 		}
 		if writeErr := os.WriteFile(output, []byte(result.Markdown+"\n"), 0o644); writeErr != nil {
 			fmt.Fprintf(os.Stderr, "Error writing output: %v\n", writeErr)
@@ -129,11 +132,6 @@ func main() {
 		fmt.Print(result.Markdown)
 		fmt.Println()
 	}
-}
-
-// bytesReadSeeker wraps a byte slice as io.ReadSeeker.
-type bytesReadSeeker struct {
-	*strings.Reader
 }
 
 func newBytesReadSeeker(data []byte) io.ReadSeeker {

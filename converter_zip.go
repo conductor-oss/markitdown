@@ -81,7 +81,7 @@ func (c *ZipConverter) Convert(reader io.ReadSeeker, info StreamInfo) (*Document
 		// Detect MIME type
 		fileReader := bytes.NewReader(fileData)
 		fileInfo.MIMEType = detectMIMEType(fileReader, ext)
-		fileReader.Seek(0, io.SeekStart)
+		_, _ = fileReader.Seek(0, io.SeekStart)
 
 		// Try to convert
 		result, err := c.markitdown.ConvertReader(fileReader, fileInfo)
