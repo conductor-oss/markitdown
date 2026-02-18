@@ -32,7 +32,7 @@ A pure-Go library and CLI that converts documents to Markdown. Go port of the Py
 ## Install
 
 ```bash
-go get github.com/conductoross/markitdown-go
+go get github.com/conductor-oss/markitdown-go
 ```
 
 ## Library quick start
@@ -44,7 +44,7 @@ import (
 	"fmt"
 	"log"
 
-	markitdown "github.com/conductoross/markitdown-go"
+	markitdown "github.com/conductor-oss/markitdown-go"
 )
 
 func main() {
