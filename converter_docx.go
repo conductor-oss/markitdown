@@ -21,8 +21,8 @@ import (
 	"path"
 	"strings"
 
-	"github.com/conductor-oss/markitdown-go/internal/docxmath"
-	"github.com/conductor-oss/markitdown-go/internal/ooxml"
+	"github.com/conductor-oss/markitdown/internal/docxmath"
+	"github.com/conductor-oss/markitdown/internal/ooxml"
 )
 
 // DocxConverter handles DOCX files.

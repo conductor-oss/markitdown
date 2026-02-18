@@ -19,7 +19,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	markitdown "github.com/conductor-oss/markitdown-go"
+	markitdown "github.com/conductor-oss/markitdown"
 )
 
 var version = "dev"

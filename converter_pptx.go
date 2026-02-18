@@ -22,7 +22,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/conductor-oss/markitdown-go/internal/ooxml"
+	"github.com/conductor-oss/markitdown/internal/ooxml"
 )
 
 // PptxConverter handles PPTX files.

@@ -1,8 +1,8 @@
-# markitdown-go
+# markitdown
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/conductor-oss/markitdown-go.svg)](https://pkg.go.dev/github.com/conductor-oss/markitdown-go)
-[![Go Report Card](https://goreportcard.com/badge/github.com/conductor-oss/markitdown-go)](https://goreportcard.com/report/github.com/conductor-oss/markitdown-go)
-[![Release](https://img.shields.io/github/v/release/conductor-oss/markitdown-go)](https://github.com/conductor-oss/markitdown-go/releases)
+[![Go Reference](https://pkg.go.dev/badge/github.com/conductor-oss/markitdown.svg)](https://pkg.go.dev/github.com/conductor-oss/markitdown)
+[![Go Report Card](https://goreportcard.com/badge/github.com/conductor-oss/markitdown)](https://goreportcard.com/report/github.com/conductor-oss/markitdown)
+[![Release](https://img.shields.io/github/v/release/conductor-oss/markitdown)](https://github.com/conductor-oss/markitdown/releases)
 
 A pure-Go library and CLI that converts documents to Markdown. Go port of the Python [markitdown](https://github.com/microsoft/markitdown) library.
 
@@ -32,7 +32,7 @@ A pure-Go library and CLI that converts documents to Markdown. Go port of the Py
 ## Install
 
 ```bash
-go get github.com/conductor-oss/markitdown-go
+go get github.com/conductor-oss/markitdown
 ```
 
 ## Library quick start
@@ -44,7 +44,7 @@ import (
 	"fmt"
 	"log"
 
-	markitdown "github.com/conductor-oss/markitdown-go"
+	markitdown "github.com/conductor-oss/markitdown"
 )
 
 func main() {
