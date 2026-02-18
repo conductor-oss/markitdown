@@ -1,4 +1,4 @@
-module github.com/nicholasgasior/markitdown-go
+module github.com/conductor-oss/markitdown-go
 
 go 1.24.0
 

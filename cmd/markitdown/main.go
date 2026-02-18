@@ -19,19 +19,19 @@ import (
 	"path/filepath"
 	"strings"
 
-	markitdown "github.com/nicholasgasior/markitdown-go"
+	markitdown "github.com/conductor-oss/markitdown-go"
 )
 
 var version = "dev"
 
 func main() {
 	var (
-		output        string
-		extension     string
-		mimeType      string
-		charset       string
-		showVersion   bool
-		keepDataURIs  bool
+		output       string
+		extension    string
+		mimeType     string
+		charset      string
+		showVersion  bool
+		keepDataURIs bool
 	)
 
 	flag.StringVar(&output, "o", "", "Output file (default: stdout)")
